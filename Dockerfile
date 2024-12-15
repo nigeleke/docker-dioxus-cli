@@ -1,3 +1,13 @@
-FROM rust:alpine AS dioxus
-RUN apk add --no-cache gcc musl-dev libc-dev openssl-dev openssl-libs-static libgcc libstdc++ pkgconfig \
-    && cargo install dioxus-cli
+FROM ubuntu AS dioxus
+RUN sudo apt update \
+    && sudo apt install libwebkit2gtk-4.1-dev \
+      build-essential \
+      curl \
+      wget \
+      file \
+      libxdo-dev \
+      libssl-dev \
+      libayatana-appindicator3-dev \
+      librsvg2-dev \
+    && curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs --yes | sh
+    # && cargo install dioxus-cli
