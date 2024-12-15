@@ -16,6 +16,7 @@ jobs:
 
             - name: Build
               run: |
+                  sudo usermod -aG docker $(whoami)
                   podman run --rm --privileged multiarch/qemu-user-static --reset -p yes
                   podman manifest create nigeleke/docker-dioxus-cli
                   podman build -t nigeleke/docker-dioxus-cli .
