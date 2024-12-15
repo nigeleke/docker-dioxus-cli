@@ -9,5 +9,7 @@ RUN apt-get update \
       libssl-dev \
       libayatana-appindicator3-dev \
       librsvg2-dev \
-    && curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh \
+    && curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs > sh.rustup.rs \
+    && cat sh.rustup.rs \
+    && sh sh.rustup.rs --yes \
     && cargo install dioxus-cli
