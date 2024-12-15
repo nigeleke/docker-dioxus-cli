@@ -1,6 +1,6 @@
 FROM ubuntu AS dioxus
-RUN sudo apt update \
-    && sudo apt install libwebkit2gtk-4.1-dev
+RUN apt update \
+    && apt install libwebkit2gtk-4.1-dev
       # build-essential \
       # curl \
       # wget \
