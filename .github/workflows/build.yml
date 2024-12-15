@@ -1,0 +1,24 @@
+name: Build
+
+on: push
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        steps:
+            - uses: actions/checkout@v4
+
+            - name: Update
+              run: |
+                  apt-get update
+                  apt-get install -y docker docker-compose qemu-user-static
+
+            - name: Build
+              run: |
+                  update-binfmts --display
+                  docker buildx build --platform=linux/amd64,linux/arm64 -t nigeleke/docker-dioxus-cli .
+                  echo "TODO:"
+
+            - name: Publish
+              run: echo "TODO:"
