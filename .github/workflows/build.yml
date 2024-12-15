@@ -11,8 +11,8 @@ jobs:
 
             - name: Update
               run: |
-                  apt-get update
-                  apt-get install -y docker docker-compose qemu-user-static
+                  sudo apt-get update
+                  sudo apt-get install -y docker docker-compose qemu-user-static
 
             - name: Build
               run: |
