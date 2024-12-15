@@ -4,7 +4,7 @@ RUN apt-get update \
       build-essential \
       curl \
       wget \
-      file
+      file \
       libxdo-dev \
       libssl-dev \
       libayatana-appindicator3-dev \
