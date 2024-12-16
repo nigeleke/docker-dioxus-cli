@@ -17,8 +17,7 @@ jobs:
               with:
                   platforms: linux/amd64,linux/arm64
 
-            - uses: docker/bake-action@v5
+            - uses: docker/build-push-action@v6
               with:
                   push: true
-              env:
-                  BUILDX_BAKE_GIT_AUTH_TOKEN: ${{ secrets.DOCKER_PASSWORD }}
+                  tags: nigelele/docker-dioxus-cli:latest
