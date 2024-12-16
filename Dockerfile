@@ -11,4 +11,9 @@ RUN apt-get update \
       librsvg2-dev \
     && curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y \
     && . "$HOME/.cargo/env" \
-    && cargo install dioxus-cli
+    && env \
+    && echo "---" \
+    && echo $PATH \
+    && echo "---" \
+    && echo $CARGO_HOME
+    # && cargo install dioxus-cli
