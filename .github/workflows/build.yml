@@ -12,13 +12,13 @@ jobs:
             - name: Update
               run: |
                   sudo apt-get update
-                  sudo apt-get -y install podman qemu-user-static
+                  sudo apt-get -y install docker
 
             - name: Build
               run: |
                   sudo usermod -aG docker $(whoami)
-                  podman run --rm --privileged multiarch/qemu-user-static --reset -p yes
-                  podman build --platform=linux/arm64 -t nigeleke/docker-dioxus-cli .
+                  docker buildx create --use
+                  docker buildx build --platform=linux/aarch64 -t nigeleke/docker-dioxus-cli .
 
             # podman manifest create nigeleke/docker-dioxus-cli
 
