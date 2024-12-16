@@ -20,3 +20,5 @@ jobs:
             - uses: docker/bake-action@v5
               with:
                   push: true
+              env:
+                  BUILDX_BAKE_GIT_AUTH_TOKEN: ${{ secrets.DOCKER_PASSWORD }}
