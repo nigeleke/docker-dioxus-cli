@@ -18,8 +18,9 @@ jobs:
               run: |
                   sudo usermod -aG docker $(whoami)
                   podman run --rm --privileged multiarch/qemu-user-static --reset -p yes
-                  podman manifest create nigeleke/docker-dioxus-cli
-                  podman build -t nigeleke/docker-dioxus-cli .
+                  podman build --platform=linux/arm64 -t nigeleke/docker-dioxus-cli .
+
+            # podman manifest create nigeleke/docker-dioxus-cli
 
             - uses: docker/login-action@v3
               with:
@@ -28,4 +29,4 @@ jobs:
 
             - name: Publish
               run: |
-                  podman manifest push nigeleke/docker-dioxus-cli nigeleke/docker-dioxus-cli
+                  podman push nigeleke/docker-dioxus-cli nigeleke/docker-dioxus-cli
