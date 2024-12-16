@@ -1,5 +1,4 @@
 FROM ubuntu AS dioxus
-ENV PATH=$HOME/.cargo/bin:$PATH
 RUN apt-get update \
     && apt-get -y install libwebkit2gtk-4.1-dev \
       build-essential \
@@ -18,3 +17,4 @@ RUN apt-get update \
     && echo "---" \
     && echo $CARGO_HOME
     # && cargo install dioxus-cli
+ENV PATH="~/.cargo/bin:$PATH"

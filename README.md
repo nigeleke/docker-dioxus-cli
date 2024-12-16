@@ -10,10 +10,10 @@ This project performs a cross-platform build of dioxus-cli and makes them availa
 
 ## Usage
 
-This example is for a `web` only application.
+This example is for a `web` only application. The `<tag>` mirrors the built `dioxus-cli` version.
 
 ```Dockerfile
-FROM nigeleke/docker-dioxus-cli as builder
+FROM nigeleke/docker-dioxus-cli:<tag> as builder
 WORKDIR /usr/src/app
 COPY . .
 RUN dx bundle
