@@ -17,4 +17,4 @@ RUN apt-get update \
     && echo "---" \
     && echo $CARGO_HOME
     # && cargo install dioxus-cli
-ENV PATH="~/.cargo/bin:$PATH"
+ENV PATH="$HOME/.cargo/bin:$PATH"
