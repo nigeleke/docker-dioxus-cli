@@ -21,4 +21,4 @@ jobs:
               with:
                   push: true
                   platforms: linux/arm64,linux/amd64
-                  tags: nigeleke/docker-dioxus-cli:latest,nigeleke/docker-dioxus-cli:v0.6.0
+                  tags: nigeleke/docker-dioxus-cli:latest,nigeleke/docker-dioxus-cli:v0.6.1
