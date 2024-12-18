@@ -1,6 +1,6 @@
 FROM ubuntu AS dioxus
-# RUN apt-get -qq update \
-RUN apt-get -y -qq install libwebkit2gtk-4.1-dev
+RUN apt-get -qq update \
+    && apt-get -y -qq install libwebkit2gtk-4.1-dev
     #   build-essential \
     #   curl \
     #   wget \
