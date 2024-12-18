@@ -1,6 +1,6 @@
 FROM ubuntu AS dioxus
-RUN apt-get update \
-    && apt-get -y install libwebkit2gtk-4.1-dev \
+# RUN apt-get -qq update \
+RUN apt-get -y -qq install libwebkit2gtk-4.1-dev \
       build-essential \
       curl \
       wget \
@@ -14,4 +14,4 @@ RUN apt-get update \
     && pwd \
     && echo $PATH
     # && cargo install dioxus-cli
-ENV PATH="~/.cargo/bin/:$PATH"
+ENV PATH="/root/.cargo/bin/:$PATH"
