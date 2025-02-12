@@ -19,8 +19,6 @@ RUN echo $HOME \
     && echo "1->" $PATH \
     && . $HOME/.cargo/env \
     && echo "2->" $PATH \
-    && export PATH=$HOME/.cargo/bin/:$PATH \
-    && echo "3->" $PATH \
     && cargo install dioxus-cli
 
 ENV PATH="/root/.cargo/bin/:$PATH"
