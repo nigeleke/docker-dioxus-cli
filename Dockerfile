@@ -13,6 +13,7 @@ RUN apt-get -qq update \
 
 RUN echo $HOME \
     && ls -al $HOME/.cargo/ \
+    && ls -al $HOME/.cargo/bin/ \
     && cat $HOME/.cargo/env \
     && chmod +x $HOME/.cargo/env \
     && echo $PATH \
