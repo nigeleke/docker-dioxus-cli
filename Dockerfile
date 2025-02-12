@@ -20,8 +20,8 @@ RUN echo $HOME \
     && . $HOME/.cargo/env \
     && echo $PATH \
     && export PATH=$HOME/.cargo/bin/:$PATH \
-    && echo $PATH
-
-RUN cargo install cargo-binstall \
+    && echo $PATH \
+    && cargo install cargo-binstall \
     && cargo binstall dioxus-cli
+
 ENV PATH="/root/.cargo/bin/:$PATH"
