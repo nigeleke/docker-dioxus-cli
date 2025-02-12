@@ -16,12 +16,11 @@ RUN echo $HOME \
     && ls -al $HOME/.cargo/bin/ \
     && cat $HOME/.cargo/env \
     && chmod +x $HOME/.cargo/env \
-    && echo $PATH \
+    && echo "1->" $PATH \
     && . $HOME/.cargo/env \
-    && echo $PATH \
+    && echo "2->" $PATH \
     && export PATH=$HOME/.cargo/bin/:$PATH \
-    && echo $PATH \
-    && cargo install cargo-binstall \
-    && cargo binstall dioxus-cli
+    && echo "3->" $PATH \
+    && cargo install dioxus-cli
 
 ENV PATH="/root/.cargo/bin/:$PATH"
