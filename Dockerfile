@@ -14,5 +14,3 @@ RUN apt-get -qq update \
     && cargo install dioxus-cli
 
 ENV PATH="/root/.cargo/bin/:$PATH"
-
-    # && chmod +x $HOME/.cargo/env \
