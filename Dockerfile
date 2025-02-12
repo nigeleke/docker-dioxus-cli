@@ -22,5 +22,6 @@ RUN echo $HOME \
     && export PATH=$HOME/.cargo/bin/:$PATH \
     && echo $PATH
 
-RUN cargo install dioxus-cli
+RUN cargo install cargo-binstall \
+    && cargo binstall dioxus-cli
 ENV PATH="/root/.cargo/bin/:$PATH"
