@@ -10,10 +10,10 @@ RUN apt-get -qq update \
     libayatana-appindicator3-dev \
     librsvg2-dev \
     && curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-RUN ls -al "$HOME/.cargo/" \
-    cat "$HOME/.cargo/env" \
-    chmod +x "$HOME/.cargo/env"
-RUN . "$HOME/.cargo/env"
+RUN ls -al $HOME/.cargo/
+RUN cat $HOME/.cargo/env
+RUN chmod +x "$HOME/.cargo/env"
+RUN . $HOME/.cargo/env
 RUN echo $PATH
 RUN cargo install dioxus-cli
 ENV PATH="/root/.cargo/bin/:$PATH"
