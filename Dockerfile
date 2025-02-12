@@ -9,16 +9,10 @@ RUN apt-get -qq update \
     libssl-dev \
     libayatana-appindicator3-dev \
     librsvg2-dev \
-    && curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-
-RUN echo $HOME \
-    && ls -al $HOME/.cargo/ \
-    && ls -al $HOME/.cargo/bin/ \
-    && cat $HOME/.cargo/env \
-    && chmod +x $HOME/.cargo/env \
-    && echo "1->" $PATH \
+    && curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y \
     && . $HOME/.cargo/env \
-    && echo "2->" $PATH \
     && cargo install dioxus-cli
 
 ENV PATH="/root/.cargo/bin/:$PATH"
+
+    # && chmod +x $HOME/.cargo/env \
